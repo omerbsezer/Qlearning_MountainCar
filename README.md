@@ -1,6 +1,6 @@
 # Qlearning_MountainCar
 
-"The mountain car problem, although fairly simple, is commonly applied because it requires a reinforcement learning agent to learn on two continuous variables: position and velocity. For any given state (position and velocity) of the car, the agent is given the possibility of driving left, driving right, or not using the engine at all. In the standard version of the problem, the agent receives a negative reward at every time step when the goal is not reached; the agent has no information about the goal until an initial success."
+"The mountain car problem is commonly applied because it requires a reinforcement learning agent to learn on two continuous variables: position and velocity. For any given state (position and velocity) of the car, the agent is given the possibility of driving left, driving right, or not using the engine at all. In the standard version of the problem, the agent receives a negative reward at every time step when the goal is not reached; the agent has no information about the goal until an initial success."
 
 QLearning implementation using gym.
 
