@@ -5,6 +5,7 @@ possibility of driving left, driving right, or not using the engine at all'''
 # environment: https://github.com/openai/gym/wiki/MountainCar-v0
 # 3 actions: 0:push_left, 1:no_push, 2:push_right
 # 2 observations: 0:position ; 1:volecity
+# inspired by https://github.com/llSourcell/Q_Learning_Explained
 
 import numpy as np
 
@@ -67,7 +68,7 @@ if __name__ == '__main__':
     environment = gym.make(environment_name)
     environment.seed(0)
     np.random.seed(0)
-    print ('----- using Q Learning (iterations) -----')
+    
     # create qTable with zeros
     # 3 actions: 0:push_left, 1:no_push, 2:push_right
     q_table = np.zeros((number_states, number_states, 3))
@@ -106,10 +107,10 @@ if __name__ == '__main__':
             if done:
                 break
         if i % 50 == 0:
-            print('Iteration No: %d -- Total reward : %d.' %(i+1, total_reward))
+            print('Iteration No: %d -- Total Reward : %d.' %(i+1, total_reward))
 
     solution_policy = np.argmax(q_table, axis=2)
     solution_policy_scores = [episode_simulation(environment, solution_policy, False) for _ in range(100)]
-    print("Average score of solution = ", np.mean(solution_policy_scores))
+    print("Mean score : ", np.mean(solution_policy_scores))
 # run with render=True for visualization
 episode_simulation(environment, solution_policy, True)
